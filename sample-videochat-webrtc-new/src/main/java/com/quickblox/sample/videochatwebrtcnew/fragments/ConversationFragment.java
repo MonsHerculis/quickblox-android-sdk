@@ -42,45 +42,45 @@ import java.util.Map;
 public class ConversationFragment extends Fragment implements Serializable {
 
     private String TAG = "ConversationFragment";
-    private ArrayList<Integer> opponents;
-    private int qbConferenceType;
-    private int startReason;
-    private String sessionID;
-    //    private QBGLVideoView videoView;
-    private GLSurfaceView videoView;
-    //    private QBRTCSessionDescription sessionDescription;
-    private static VideoRenderer.Callbacks REMOTE_RENDERER;
+private ArrayList<Integer> opponents;
+private int qbConferenceType;
+private int startReason;
+private String sessionID;
+//    private QBGLVideoView videoView;
+private GLSurfaceView videoView;
+//    private QBRTCSessionDescription sessionDescription;
+private static VideoRenderer.Callbacks REMOTE_RENDERER;
 
-    //    private QBGLVideoView opponentLittleCamera;
-    private TextView opponentNumber;
-    private TextView connectionStatus;
-    private ImageView opponentAvatar;
-    //    private HorizontalScrollView camerasOpponentsList;
-    private ToggleButton cameraToggle;
-    private ToggleButton switchCameraToggle;
-    private ToggleButton dynamicToggleVideoCall;
-    private ToggleButton micToggleVideoCall;
-    private ImageButton handUpVideoCall;
-    private ImageView imgMyCameraOff;
-    private TextView incUserName;
-    private View view;
-    private Map<String, String> userInfo;
-    private View opponentItemView;
-    private HorizontalScrollView camerasOpponentsList;
-    public static LinearLayout opponentsFromCall;
-    private LayoutInflater inflater;
-    private ViewGroup container;
-    private Bundle savedInstanceState;
-    private boolean isVideoEnabled = true;
-    private boolean isAudioEnabled = true;
-    private List<QBUser> allUsers = new ArrayList<>();
-    private LinearLayout actionVideoButtonsLayout;
-    //    private Chronometer timer;
-    private View actionBar;
-    private String callerName;
-    private LinearLayout noVideoImageContainer;
-    private boolean isMessageProcessed;
-    private MediaPlayer ringtone;
+//    private QBGLVideoView opponentLittleCamera;
+private TextView opponentNumber;
+private TextView connectionStatus;
+private ImageView opponentAvatar;
+//    private HorizontalScrollView camerasOpponentsList;
+private ToggleButton cameraToggle;
+private ToggleButton switchCameraToggle;
+private ToggleButton dynamicToggleVideoCall;
+private ToggleButton micToggleVideoCall;
+private ImageButton handUpVideoCall;
+private ImageView imgMyCameraOff;
+private TextView incUserName;
+private View view;
+private Map<String, String> userInfo;
+private View opponentItemView;
+private HorizontalScrollView camerasOpponentsList;
+public static LinearLayout opponentsFromCall;
+private LayoutInflater inflater;
+private ViewGroup container;
+private Bundle savedInstanceState;
+private boolean isVideoEnabled = true;
+private boolean isAudioEnabled = true;
+private List<QBUser> allUsers = new ArrayList<>();
+private LinearLayout actionVideoButtonsLayout;
+//    private Chronometer timer;
+private View actionBar;
+private String callerName;
+private LinearLayout noVideoImageContainer;
+private boolean isMessageProcessed;
+private MediaPlayer ringtone;
 
 
     @Override
@@ -310,10 +310,10 @@ public class ConversationFragment extends Fragment implements Serializable {
     }
 
 
-    public static enum StartConversetionReason {
-        INCOME_CALL_FOR_ACCEPTION,
-        OUTCOME_CALL_MADE;
-    }
+public static enum StartConversetionReason {
+    INCOME_CALL_FOR_ACCEPTION,
+    OUTCOME_CALL_MADE;
+}
 
     private List<QBUser> getOpponentsFromCall(ArrayList<Integer> opponents) {
         ArrayList<QBUser> opponentsList = new ArrayList<>();
