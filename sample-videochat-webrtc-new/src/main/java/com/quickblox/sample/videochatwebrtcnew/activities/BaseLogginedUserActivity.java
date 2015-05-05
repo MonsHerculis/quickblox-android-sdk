@@ -25,7 +25,7 @@ public class BaseLogginedUserActivity extends Activity {
     private View mCustomView;
     private static Integer userID;
     private static Integer userIndex;
-    private static boolean started = false;
+    private boolean started = false;
 
 
     public void initActionBar() {
