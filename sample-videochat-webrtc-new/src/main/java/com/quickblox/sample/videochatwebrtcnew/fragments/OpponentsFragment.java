@@ -127,9 +127,14 @@ public class OpponentsFragment extends Fragment implements View.OnClickListener,
     }
 
     private void prepareUserList(ListView opponentsList, List<QBUser> users) {
-        int i = DataHolder.getUserIndexByID(QBChatService.getInstance().getUser().getId()); /*searchIndexLogginedUser(users);*/
-        if (i >= 0)
-            users.remove(i);
+//        Integer i = DataHolder.getUserIndexByID(QBChatService.getInstance().getUser().getId()); /*searchIndexLogginedUser(users);*/
+        QBUser usr = QBChatService.getInstance().getUser();
+        if (users.contains(usr)) {
+            users.remove(usr);
+        }
+//        if (usr != null) {
+//            users.remove(usr);
+//        }
 
         // Prepare users list for simple adapter.
         opponentsAdapter = new OpponentsAdapter(getActivity(), users);

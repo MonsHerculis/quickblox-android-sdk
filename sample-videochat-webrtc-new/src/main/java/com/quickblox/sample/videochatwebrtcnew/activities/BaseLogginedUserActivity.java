@@ -2,10 +2,7 @@ package com.quickblox.sample.videochatwebrtcnew.activities;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.shapes.Shape;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,10 +22,10 @@ public class BaseLogginedUserActivity extends Activity {
     private static final String TAG = BaseLogginedUserActivity.class.getSimpleName();
     static android.app.ActionBar mActionBar;
     private Chronometer timerABWithTimer;
-//    private LayoutInflater mInflater = LayoutInflater.from(this);
     private View mCustomView;
     private static Integer userID;
     private static Integer userIndex;
+    private static boolean started = false;
 
 
     public void initActionBar() {
@@ -99,8 +96,11 @@ public class BaseLogginedUserActivity extends Activity {
 //    }
 
     public void startTimer() {
-        timerABWithTimer.setBase(SystemClock.elapsedRealtime());
-        timerABWithTimer.start();
+        if (!started) {
+            timerABWithTimer.setBase(SystemClock.elapsedRealtime());
+            timerABWithTimer.start();
+            started = true;
+        }
     }
 
     public static int resourceSelector(int number) {
