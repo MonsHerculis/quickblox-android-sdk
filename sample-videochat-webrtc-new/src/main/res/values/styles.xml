@@ -5,4 +5,9 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="BackgroundTextViewNumber" parent="android:Theme.Holo">
+        <!-- Customize your theme here. -->
+        <item name="android:background">@drawable/shape_oval_transparent</item>
+    </style>
+
 </resources>

@@ -75,7 +75,7 @@ public class CallActivity extends BaseLogginedUserActivity implements QBRTCClien
 //    private VideoRenderer.Callbacks localRenderer;
 //    private List<VideoRenderer.Callbacks> opponentRenderers = new LinkedList<>();
     private QBGLVideoView videoView;
-    public static String login;
+//    public static String login;
     public static Map<Integer, QBRTCVideoTrack> videoTrackList = new HashMap<>();
     public static ArrayList<QBUser> opponentsList;
     private HandlerThread showIncomingCallWindowTaskThread;
@@ -93,7 +93,7 @@ public class CallActivity extends BaseLogginedUserActivity implements QBRTCClien
         Log.d(TAG, "Activity. Thread id: " + Thread.currentThread().getId());
 
         // Probably initialize members with default values for a new instance
-        login = getIntent().getStringExtra("login");
+//        login = getIntent().getStringExtra("login");
 
         if (savedInstanceState == null) {
             addOpponentsFragment();

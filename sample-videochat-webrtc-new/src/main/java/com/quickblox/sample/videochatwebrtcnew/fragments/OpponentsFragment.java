@@ -20,6 +20,7 @@ import com.quickblox.core.request.QBPagedRequestBuilder;
 import com.quickblox.sample.videochatwebrtcnew.R;
 import com.quickblox.sample.videochatwebrtcnew.activities.CallActivity;
 import com.quickblox.sample.videochatwebrtcnew.adapters.OpponentsAdapter;
+import com.quickblox.sample.videochatwebrtcnew.holder.DataHolder;
 import com.quickblox.users.QBUsers;
 import com.quickblox.users.model.QBUser;
 import com.quickblox.videochat.webrtc.QBRTCClient;
@@ -126,12 +127,11 @@ public class OpponentsFragment extends Fragment implements View.OnClickListener,
     }
 
     private void prepareUserList(ListView opponentsList, List<QBUser> users) {
-        int i = searchIndexLogginedUser(users);
+        int i = DataHolder.getUserIndexByID(QBChatService.getInstance().getUser().getId()); /*searchIndexLogginedUser(users);*/
         if (i >= 0)
             users.remove(i);
 
         // Prepare users list for simple adapter.
-        //
         opponentsAdapter = new OpponentsAdapter(getActivity(), users);
         opponentsList.setAdapter(opponentsAdapter);
     }
@@ -146,7 +146,7 @@ public class OpponentsFragment extends Fragment implements View.OnClickListener,
 
     private void initUI(View view) {
 
-        login = getActivity().getIntent().getStringExtra("login");
+//        login = getActivity().getIntent().getStringExtra("login");
 
         btnAudioCall = (Button)view.findViewById(R.id.btnAudioCall);
         btnVideoCall = (Button)view.findViewById(R.id.btnVideoCall);
@@ -251,14 +251,14 @@ public class OpponentsFragment extends Fragment implements View.OnClickListener,
         return resultList;
     }
 
-    public static int searchIndexLogginedUser(List<QBUser> usersList) {
-        int indexLogginedUser = -1;
-        for (QBUser usr : usersList) {
-            if (usr.getLogin().equals(login)) {
-                indexLogginedUser = usersList.indexOf(usr);
-                break;
-            }
-        }
-        return indexLogginedUser;
-    }
+//    public static int searchIndexLogginedUser(List<QBUser> usersList) {
+//        int indexLogginedUser = -1;
+//        for (QBUser usr : usersList) {
+//            if (usr.getLogin().equals(login)) {
+//                indexLogginedUser = usersList.indexOf(usr);
+//                break;
+//            }
+//        }
+//        return indexLogginedUser;
+//    }
 }

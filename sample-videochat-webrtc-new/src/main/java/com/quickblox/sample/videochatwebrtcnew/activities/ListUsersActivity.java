@@ -73,95 +73,95 @@ public class ListUsersActivity extends Activity {
 
     }
 
-    public static int resourceSelector(int number) {
-        int resStr = -1;
-        switch (number) {
-            case 0:
-                resStr = R.drawable.shape_oval_spring_bud;
-                break;
-            case 1:
-                resStr = R.drawable.shape_oval_orange;
-                break;
-            case 2:
-                resStr = R.drawable.shape_oval_water_bondi_beach;
-                break;
-            case 3:
-                resStr = R.drawable.shape_oval_blue_green;
-                break;
-            case 4:
-                resStr = R.drawable.shape_oval_lime;
-                break;
-            case 5:
-                resStr = R.drawable.shape_oval_mauveine;
-                break;
-            case 6:
-                resStr = R.drawable.shape_oval_gentianaceae_blue;
-                break;
-            case 7:
-                resStr = R.drawable.shape_oval_blue;
-                break;
-            case 8:
-                resStr = R.drawable.shape_oval_blue_krayola;
-                break;
-            case 9:
-                resStr = R.drawable.shape_oval_coral;
-                break;
-            default:
-                resStr = resourceSelector(number % 10);
-        }
-        return resStr;
-    }
-
-    public static int selectBackgrounForOpponent(int number) {
-        int resStr = -1;
-        switch (number) {
-            case 0:
-                resStr = R.drawable.rectangle_rounded_spring_bud;
-                break;
-            case 1:
-                resStr = R.drawable.rectangle_rounded_orange;
-                break;
-            case 2:
-                resStr = R.drawable.rectangle_rounded_water_bondi_beach;
-                break;
-            case 3:
-                resStr = R.drawable.rectangle_rounded_blue_green;
-                break;
-            case 4:
-                resStr = R.drawable.rectangle_rounded_lime;
-                break;
-            case 5:
-                resStr = R.drawable.rectangle_rounded_mauveine;
-                break;
-            case 6:
-                resStr = R.drawable.rectangle_rounded_gentianaceae_blue;
-                break;
-            case 7:
-                resStr = R.drawable.rectangle_rounded_blue;
-                break;
-            case 8:
-                resStr = R.drawable.rectangle_rounded_blue_krayola;
-                break;
-            case 9:
-                resStr = R.drawable.rectangle_rounded_coral;
-                break;
-            default:
-                resStr = selectBackgrounForOpponent(number % 10);
-        }
-        return resStr;
-    }
-
-    public static int getUserIndex(int id) {
-        int index = 0;
-
-        for (User usr : users) {
-            if (usr.getId().equals(id)) {
-                index = (users.indexOf(usr)) + 1;
-                break;
-            }
-        }
-        return index;
-    }
+//    public static int resourceSelector(int number) {
+//        int resStr = -1;
+//        switch (number) {
+//            case 0:
+//                resStr = R.drawable.shape_oval_spring_bud;
+//                break;
+//            case 1:
+//                resStr = R.drawable.shape_oval_orange;
+//                break;
+//            case 2:
+//                resStr = R.drawable.shape_oval_water_bondi_beach;
+//                break;
+//            case 3:
+//                resStr = R.drawable.shape_oval_blue_green;
+//                break;
+//            case 4:
+//                resStr = R.drawable.shape_oval_lime;
+//                break;
+//            case 5:
+//                resStr = R.drawable.shape_oval_mauveine;
+//                break;
+//            case 6:
+//                resStr = R.drawable.shape_oval_gentianaceae_blue;
+//                break;
+//            case 7:
+//                resStr = R.drawable.shape_oval_blue;
+//                break;
+//            case 8:
+//                resStr = R.drawable.shape_oval_blue_krayola;
+//                break;
+//            case 9:
+//                resStr = R.drawable.shape_oval_coral;
+//                break;
+//            default:
+//                resStr = resourceSelector(number % 10);
+//        }
+//        return resStr;
+//    }
+//
+//    public static int selectBackgrounForOpponent(int number) {
+//        int resStr = -1;
+//        switch (number) {
+//            case 0:
+//                resStr = R.drawable.rectangle_rounded_spring_bud;
+//                break;
+//            case 1:
+//                resStr = R.drawable.rectangle_rounded_orange;
+//                break;
+//            case 2:
+//                resStr = R.drawable.rectangle_rounded_water_bondi_beach;
+//                break;
+//            case 3:
+//                resStr = R.drawable.rectangle_rounded_blue_green;
+//                break;
+//            case 4:
+//                resStr = R.drawable.rectangle_rounded_lime;
+//                break;
+//            case 5:
+//                resStr = R.drawable.rectangle_rounded_mauveine;
+//                break;
+//            case 6:
+//                resStr = R.drawable.rectangle_rounded_gentianaceae_blue;
+//                break;
+//            case 7:
+//                resStr = R.drawable.rectangle_rounded_blue;
+//                break;
+//            case 8:
+//                resStr = R.drawable.rectangle_rounded_blue_krayola;
+//                break;
+//            case 9:
+//                resStr = R.drawable.rectangle_rounded_coral;
+//                break;
+//            default:
+//                resStr = selectBackgrounForOpponent(number % 10);
+//        }
+//        return resStr;
+//    }
+//
+//    public static int getUserIndex(int id) {
+//        int index = 0;
+//
+//        for (User usr : users) {
+//            if (usr.getId().equals(id)) {
+//                index = (users.indexOf(usr)) + 1;
+//                break;
+//            }
+//        }
+//        return index;
+//    }
 
     private void initUsersList() {
 
@@ -201,7 +201,7 @@ public class ListUsersActivity extends Activity {
                     public void onSuccess(QBUser result, Bundle params) {
                         Log.d(TAG, "onSuccess login to chat with params");
                         Intent intent = new Intent(ListUsersActivity.this, CallActivity.class);
-                        intent.putExtra("login", login);
+//                        intent.putExtra("login", login);
 
                     }
 
@@ -209,7 +209,7 @@ public class ListUsersActivity extends Activity {
                     public void onSuccess() {
                         Log.d(TAG, "onSuccess login to chat");
                         Intent intent = new Intent(ListUsersActivity.this, CallActivity.class);
-                        intent.putExtra("login", login);
+//                        intent.putExtra("login", login);
                         startActivity(intent);
                     }
 

@@ -19,6 +19,7 @@ import android.widget.ToggleButton;
 import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.sample.videochatwebrtcnew.ApplicationSingleton;
 import com.quickblox.sample.videochatwebrtcnew.R;
+import com.quickblox.sample.videochatwebrtcnew.activities.BaseLogginedUserActivity;
 import com.quickblox.sample.videochatwebrtcnew.activities.CallActivity;
 import com.quickblox.sample.videochatwebrtcnew.activities.ListUsersActivity;
 import com.quickblox.sample.videochatwebrtcnew.holder.DataHolder;
@@ -217,7 +218,7 @@ private MediaPlayer ringtone;
         handUpVideoCall = (ImageButton) view.findViewById(R.id.handUpVideoCall);
         incUserName = (TextView) view.findViewById(R.id.incUserName);
         incUserName.setText(callerName);
-        incUserName.setBackgroundResource(ListUsersActivity.selectBackgrounForOpponent((
+        incUserName.setBackgroundResource(BaseLogginedUserActivity.selectBackgrounForOpponent((
                 DataHolder.getUserIndexByFullName(callerName)) + 1));
 
         noVideoImageContainer = (LinearLayout) view.findViewById(R.id.noVideoImageContainer);
@@ -351,9 +352,9 @@ public static enum StartConversetionReason {
             });
 
             TextView opponentNumber = (TextView) opponentItemView.findViewById(R.id.opponentNumber);
-            opponentNumber.setText(String.valueOf(ListUsersActivity.getUserIndex(userID)));
-            opponentNumber.setBackgroundResource(ListUsersActivity.resourceSelector
-                    (ListUsersActivity.getUserIndex(userID)));
+            opponentNumber.setText(String.valueOf(DataHolder.getUserIndexByID(userID) + 1)); /*ListUsersActivity.getUserIndex(userID)));*/
+            opponentNumber.setBackgroundResource(BaseLogginedUserActivity.resourceSelector(DataHolder.getUserIndexByID(userID) + 1));
+//                    (ListUsersActivity.getUserIndex(userID)));
 
             ImageView opponentAvatar = (ImageView) opponentItemView.findViewById(R.id.opponentAvatar);
             opponentAvatar.setImageResource(R.drawable.ic_noavatar);
